@@ -87,8 +87,8 @@ class Tool(BaseTool):
         CmdTask("mkdir -p {}".format(clash_home),os_command=True).run()
         if osarch=='amd64':
             CmdTask('sudo wget http://github.fishros.org/https://raw.githubusercontent.com/tuomasiy/mlash/main/clash -O {}clash'.format(clash_home),os_command=True).run()
-        # elif osarch=='arm64':
-            # CmdTask('sudo wget http://github.fishros.org/https://github.com/Dreamacro/clash/releases/download/v1.17.0/clash-linux-arm64-v1.17.0.gz -O {}clash.gz'.format(clash_home),os_command=True).run()
+        elif osarch=='arm64':
+            CmdTask('sudo wget http://github.fishros.org/https://github.com/Dreamacro/clash/releases/download/v1.17.0/clash-linux-arm64-v1.17.0.gz -O {}clash.gz'.format(clash_home),os_command=True).run()
         else:
             return False
         PrintUtils.print_info("下载完成~")
